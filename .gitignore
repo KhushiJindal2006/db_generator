@@ -1,0 +1,23 @@
+# Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+
+# Build directory
+build/
+
+# IDE files
+.vscode/
+.vs/
+
+# OS files
+.DS_Store
+
+# Temporary files
+*.tmp
+
+# Project executable
+db_generator
