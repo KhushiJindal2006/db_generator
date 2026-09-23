@@ -21,3 +21,6 @@ build/
 
 # Project executable
 db_generator
+
+# Generated data files
+*.csv
