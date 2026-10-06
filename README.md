@@ -1,4 +1,4 @@
-# Database Generator in C
+# Synthetic Database Generator in C
 
 ## Project Description
 
@@ -129,7 +129,7 @@ db_generator/
 
 ## Requirements
 
-To build and run Database Generator, you need:
+To build and run Synthetic Database Generator, you need:
 
 - GCC
 - GNU Make
@@ -172,7 +172,7 @@ The program will ask how many records you want to generate.
 For example:
 
 ```text
-Database Generator
+Synthetic Database Generator
 How many records would you like to generate: 5
 
 Successfully generated 5 records.
