@@ -50,7 +50,7 @@ The main goals are:
 The program follows a simple process:
 
 1. The user starts `db_generator`.
-2. The program asks how many records should be generated.
+2. The user either enters the number of records interactively or provides it as a command-line argument.
 3. A user record is created for each requested record.
 4. Random values are selected for the user fields.
 5. The generated record is written to a CSV file.
@@ -129,7 +129,7 @@ db_generator/
 
 ## Requirements
 
-To build and run DBForge, you need:
+To build and run Database Generator, you need:
 
 - GCC
 - GNU Make
@@ -157,7 +157,11 @@ make clean
 
 ## Running the Program
 
-After building the project, run:
+After building the project, the program can be run in two ways.
+
+### Interactive Mode
+
+Run:
 
 ```bash
 ./db_generator
@@ -169,13 +173,27 @@ For example:
 
 ```text
 Database Generator
-Enter number of records to generate: 5
+How many records would you like to generate: 5
 
 Successfully generated 5 records.
 Data saved to users.csv
 ```
 
-The generated data will be saved in:
+### Command-Line Mode
+
+The number of records can also be provided directly as a command-line argument.
+
+For example:
+
+```bash
+./db_generator 100
+```
+
+This will generate 100 user records without asking for the number interactively.
+
+If an invalid or non-positive number of records is provided, the program displays an error message.
+
+The generated data will be saved in
 
 ```text
 users.csv
