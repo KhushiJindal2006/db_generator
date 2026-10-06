@@ -5,18 +5,22 @@
 #include "generator.h"
 #include "exporter.h"
 
-int main() {
+int main(int argc, char *argv[]) {
     int numRecords;
 
     srand(time(NULL));
 
-    printf("Database Generator\n");
-    printf("Enter number of records to generate: ");
+    printf("Synthetic Database Generator\n");
 
-    scanf("%d", &numRecords);
+    if (argc == 2) {
+        numRecords = atoi(argv[1]);
+    } else {
+        printf("How many records would you like to generate: ");
+        scanf("%d", &numRecords);
+    }
 
     if (numRecords <= 0) {
-        printf("Number of records must be greater than 0.\n");
+        printf("Error: Please enter a valid number of records.\n");
         return 1;
     }
 
