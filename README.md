@@ -60,14 +60,13 @@ The program follows a simple process:
 7. After generation is complete, the program displays a success message.
 
 The available columns are:
-
-id — Unique record ID
-name — User's name
-age — User's age
-gender — User's gender
-country — User's country
-email — Generated email address
-phone — Generated phone number
+- id — Unique record ID
+- name — User's name
+- age — User's age
+- gender — User's gender
+- country — User's country
+- email — Generated email address
+- phone — Generated phone number
 
 The output CSV contains only the columns selected by the user.
 
@@ -127,6 +126,7 @@ db_generator/
 ├── tests/
 ├── Makefile
 ├── README.md
+├── LICENSE
 └── .gitignore
 ```
 
@@ -178,6 +178,22 @@ For example:
 Synthetic Database Generator
 How many records would you like to generate: 5
 
+Select the columns you want:
+1. ID
+2. Name
+3. Age
+4. Gender
+5. Country
+6. Email
+7. Phone
+
+Enter column numbers one by one (enter 0 to finish):
+Column number: 1
+Column number: 2
+Column number: 5
+Column number: 6
+Column number: 0
+
 Successfully generated 5 records.
 Data saved to users.csv
 ```
@@ -192,7 +208,7 @@ For example:
 ./db_generator 100
 ```
 
-This will generate 100 user records without asking for the number interactively.
+This provides the number of records directly, so the program does not prompt for the record count. The program will still ask you to select which CSV columns to include.
 
 If an invalid or non-positive number of records is provided, the program displays an error message.
 
