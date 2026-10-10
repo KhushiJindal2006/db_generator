@@ -44,6 +44,8 @@ The main goals are:
 - CSV file generation.
 - Modular source code using separate `.c` and `.h` files.
 - Building the project using a Makefile.
+- User selection of CSV columns.
+- Export only the selected columns to the generated CSV file.
 
 ## How It Works
 
@@ -51,22 +53,23 @@ The program follows a simple process:
 
 1. The user starts `db_generator`.
 2. The user either enters the number of records interactively or provides it as a command-line argument.
-3. A user record is created for each requested record.
-4. Random values are selected for the user fields.
-5. The generated record is written to a CSV file.
-6. After all records are generated, the program reports the output file.
+3. The program displays the available CSV columns.
+4. The user selects the columns to include in the output file by entering their column numbers one by one. Enter 0 to finish the selection.
+5. The program generates synthetic user records with random values.
+6. Only the selected columns are written to users.csv.
+7. After generation is complete, the program displays a success message.
 
-The generated CSV contains the following fields:
+The available columns are:
 
-```text
-id
-name
-age
-gender
-country
-email
-phone
-```
+id — Unique record ID
+name — User's name
+age — User's age
+gender — User's gender
+country — User's country
+email — Generated email address
+phone — Generated phone number
+
+The output CSV contains only the columns selected by the user.
 
 ## Project Design
 
@@ -201,13 +204,14 @@ users.csv
 
 ## Example Output
 
-Example contents of the generated CSV file:
+For example, suppose the user generates 3 records and selects columns 1, 2, 5, and 6 (ID, Name, Country, and Email).
+The generated users.csv file will look like this:
 
 ```csv
-id,name,age,gender,country,email,phone
-1,Kiara Jain,18,Male,India,kiara.jain1@example.com,7315492202
-2,Ananya Verma,28,Female,Japan,ananya.verma2@example.com,7135328306
-3,Arjun Kumar,21,Female,Canada,arjun.kumar3@example.com,7769295546
+id,name,country,email
+1,Kiara Jain,India,kiara.jain1@example.com
+2,Ananya Verma,Japan,ananya.verma2@example.com
+3,Arjun Kumar,Canada,arjun.kumar3@example.com
 ```
 
 The generated values may be different each time the program is executed.
